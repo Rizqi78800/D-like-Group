@@ -1,0 +1,789 @@
+/* :root {
+  --primary: #b6895b;
+  --bg: #010101;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+.navbar .navbar-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  font-style: italic;
+}
+
+.navbar .navbar-logo-1 {
+  font-size: 1.5rem;
+  color: #b6895b;
+  font-style: italic;
+  display: block;
+}
+
+.navbar .navbar-logo span {
+  color: #b6895b;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #b6895b;
+}
+
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #b6895b;
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: white;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: #b6895b;
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: white;
+  width: 50rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: #4e4646;
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: #010101;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-color: rgba(53, 53, 53, 0.5); /* Ubah nilai alpha (0.5) sesuai keinginan untuk tingkat kegelapan */
+}
+
+.hero .content {
+  width: 100%;
+  margin-bottom: 130px;
+  display: flex;
+  text-align: center;
+}
+
+.hero .content .text-content {
+  max-width: 60%;
+}
+
+.hero .content h1 {
+  margin-top: 10rem;
+  margin-right: 6rem;
+  font-size: 4.5em;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content p {
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.hero .content img {
+  max-width: 100%;
+  display: block;
+  text-align: center;
+}
+
+/* About Section */
+.about {
+  background-color: #653916;
+}
+
+.about,
+.menu,
+.products,
+.contact {
+  padding: 6rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.products h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.products h2 span,
+.contact h2 span {
+  color: white;
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+/* Menu Section */
+.menu {
+  background-color: #ad753e;
+}
+
+.menu h2,
+.products h2,
+.contact h2 {
+  margin-bottom: 1rem;
+}
+
+.menu p,
+.products p,
+.contact p {
+  text-align: center;
+  max-width: 40rem;
+  margin: auto;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.menu .row .menu-card img {
+  border-radius: 50%;
+  width: 80%;
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin: 1rem auto 0.5rem;
+}
+
+/* Products Section */
+.products {
+  background-color: #b6895b;
+}
+.products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.products .product-card {
+  text-align: center;
+  border: 1px solid white;
+  padding: 2rem;
+}
+
+.products .product-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.products .product-icons a {
+  width: 4rem;
+  height: 4rem;
+  color: white;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .product-icons a:hover {
+  background-color: #b6895b;
+  border: 1px solid #b6895b;
+}
+
+.products .product-image {
+  padding: 1rem 0;
+}
+
+.products .product-image img {
+  height: 25rem;
+}
+
+.products .product-content h3 {
+  font-size: 2rem;
+}
+
+.products .product-stars {
+  font-size: 1.7rem;
+  padding: 0.8rem;
+  color: #653916;
+}
+
+.products .product-stars .star-full {
+  fill: #653916;
+}
+
+.products .product-price {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.products .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  background-color: rgb(176, 124, 95);
+}
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: #222;
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .input-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: #010101;
+  border: 1px solid white;
+  padding-left: 2rem;
+}
+
+.contact .row form .input-group input {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.7rem;
+  background: none;
+  color: white;
+}
+
+.contact .row form .btn {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  color: white;
+  background-color: #b6895b;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: rgb(121, 54, 17);
+  text-align: center;
+  padding: 1rem 0 3rem;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: white;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: #010101;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a {
+  color: white;
+  padding: 0.7rem 1rem;
+  font-size: medium;
+}
+
+footer .credit {
+  font-size: 0.8rem;
+  font-size: medium;
+}
+
+footer .credit a {
+  color: #ecae5e;
+  font-weight: 700;
+}
+
+/* Modal Box */
+/* Item Detail */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-container {
+  position: absolute;
+  background-color: #fefefe;
+  color: #010101;
+  margin: 15% auto 15% 10%;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  animation: animateModal 0.5s;
+}
+.modal-container .close-icon-right {
+  position: absolute;
+  right: 20px;
+  left: auto;
+}
+.modal .product-price {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.modal .product-price span {
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.product-stars {
+  color: #653916;
+}
+
+.modal .star-full {
+  fill: #653916;
+  color: #653916;
+}
+
+/* Modal Animation */
+@keyframes animateModal {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1rem;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content img {
+  height: 20rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: #b6895b;
+  color: white;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+/* Media Queries */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  html {
+    font-size: 60%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-style: italic;
+  }
+  
+  .navbar .navbar-logo-1 {
+    font-size: 1.5rem;
+    color: #b6895b;
+    font-style: italic;
+    display: block;
+  }
+  
+  .navbar .navbar-logo span {
+    color: #b6895b;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #010101;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  /* Hero Section for Tablet */
+  .hero .content {
+    width: 100%;
+    flex-direction: column; /* Mengatur tata letak kolom untuk menempatkan logo di atas dan teks di bawah */
+    align-items: center;
+    margin-bottom: 400px; /* Menengahkan elemen-elemen di dalam .content */
+  }
+
+  .hero .content .logo {
+    max-width: 100%; /* Sesuaikan ukuran logo sesuai kebutuhan */
+  }
+
+  .hero .content .text-content {
+    max-width: 60%;
+  }
+
+  .hero .content h1 {
+    margin-top: 1rem; /* Mengatur jarak antara logo dan teks */
+    margin-right: 0; /* Menghilangkan margin kanan pada judul */
+    font-size: 4.5em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+  }
+
+  .hero .content p {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .hero .content img {
+    max-width: 100%;
+    display: block;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+
+  .menu p {
+    font-size: 1.2rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 30rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+
+  .modal-content {
+    flex-wrap: wrap;
+  }
+
+  .contact .row iframe {
+    width: 100%;
+    height: 150;
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 40%;
+  }
+
+  .navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    font-style: italic;
+  }
+  
+  .navbar .navbar-logo-1 {
+    font-size: 1.5rem;
+    color: #b6895b;
+    font-style: italic;
+    display: block;
+  }
+  
+  .navbar .navbar-logo span {
+    color: #b6895b;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: white;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #010101;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
+  .about .row .about-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .hero .content {
+    width: 100%;
+    flex-direction: column; /* Mengatur tata letak kolom untuk menempatkan logo di atas dan teks di bawah */
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  .hero .content .logo {
+    max-width: 100%; /* Sesuaikan ukuran logo sesuai kebutuhan */
+  }
+
+  .hero .content .text-content {
+    max-width: 60%;
+  }
+
+  .hero .content h1 {
+    margin-top: 1rem; /* Mengatur jarak antara logo dan teks */
+    margin-right: 0; /* Menghilangkan margin kanan pada judul */
+    font-size: 4.5em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+  }
+
+  .hero .content p {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .hero .content img {
+    max-width: 100%;
+    display: block;
+  }
+  .contact .row iframe {
+    width: 100%;
+    height: 30;
+  }
+}
